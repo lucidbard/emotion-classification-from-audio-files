@@ -32,7 +32,7 @@ class Server():
         data = re.compile(
             b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
         with open("input.wav", "wb") as file:
-            file.write(data)
+            file.write(packet)
 
     def run(self):
         print(f"[+] Server: http://{self.host_ip}:{self.host_port}")
