@@ -38,7 +38,7 @@ def index():
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
-    return Flask.Response(response=result, status=200)
+    return Flask.make_response(response=result, status=200)
 
 
 if __name__ == '__main__':
