@@ -25,7 +25,7 @@ def index():
             if data.filename:
                 data.save(os.path.join(FOLDER, data.filename))
             live_prediction = LivePredictions(
-                file=data.filename)
+                file=os.path.join(FOLDER, data.filename))
             result = live_prediction.make_predictions()
         return result
 
