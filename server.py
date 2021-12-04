@@ -29,7 +29,7 @@ def index():
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
-    return result
+    return flask.Response(response=result, status=200)
 
 
 if __name__ == '__main__':
