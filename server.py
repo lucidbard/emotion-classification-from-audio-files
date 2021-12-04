@@ -35,7 +35,7 @@ class Server():
         print("Writing file...")
         with open("input.wav", "wb") as file:
             file.write(packet)
-        live_prediction = LivePredictions(
+        live_prediction = live_predictions.LivePredictions(
             file='input.wav')
         live_prediction.make_predictions()
         print("done")
