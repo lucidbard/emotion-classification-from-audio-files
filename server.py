@@ -1,6 +1,6 @@
 import os
 from flask import Flask, request
-
+from live_predictions import LivePredictions
 # create folder for uploaded data
 FOLDER = 'uploaded'
 os.makedirs(FOLDER, exist_ok=True)
