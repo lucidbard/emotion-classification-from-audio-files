@@ -38,7 +38,9 @@ def index():
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
-    return make_response(result, 200)
+    response = make_response(result, 200)
+    response.mimetype = "text/plain"
+    return response
 
 
 if __name__ == '__main__':
