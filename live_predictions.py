@@ -28,18 +28,19 @@ class LivePredictions:
         Method to process the files and create your features.
         """
         data, sampling_rate = librosa.load(self.file)
-        mfccs = np.mean(librosa.feature.mfcc(y=data, sr=sampling_rate, n_mfcc=40).T, axis=0)
+        mfccs = np.mean(librosa.feature.mfcc(
+            y=data, sr=sampling_rate, n_mfcc=40).T, axis=0)
         x = np.expand_dims(mfccs, axis=2)
         x = np.expand_dims(x, axis=0)
         predictions = self.loaded_model.predict_classes(x)
-        print( "Prediction is", " ", self.convert_class_to_emotion(predictions))
+        print("Prediction is", " ", self.convert_class_to_emotion(predictions))
 
     @staticmethod
     def convert_class_to_emotion(pred):
         """
         Method to convert the predictions (int) into human readable strings.
         """
-        
+
         label_conversion = {'0': 'neutral',
                             '1': 'calm',
                             '2': 'happy',
@@ -56,8 +57,10 @@ class LivePredictions:
 
 
 if __name__ == '__main__':
-    live_prediction = LivePredictions(file=EXAMPLES_PATH + '03-01-01-01-01-02-05.wav')
-    live_prediction.loaded_model.summary()
-    live_prediction.make_predictions()
-    live_prediction = LivePredictions(file=EXAMPLES_PATH + '10-16-07-29-82-30-63.wav')
+    # live_prediction = LivePredictions(file=EXAMPLES_PATH + '03-01-01-01-01-02-05.wav')
+    # live_prediction.loaded_model.summary()
+    # live_prediction.make_predictions()
+    # live_prediction = LivePredictions(file=EXAMPLES_PATH + '10-16-07-29-82-30-63.wav')
+    # live_prediction.make_predictions()
+    live_prediction = LivePredictions(file=EXAMPLES_PATH + 'samplemad.wav')
     live_prediction.make_predictions()
