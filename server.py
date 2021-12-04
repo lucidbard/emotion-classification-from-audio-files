@@ -27,7 +27,7 @@ def index():
             live_prediction = LivePredictions(
                 file=os.path.join(FOLDER, data.filename))
             result = live_prediction.make_predictions()
-        return result
+    return result
 
 
 if __name__ == '__main__':
