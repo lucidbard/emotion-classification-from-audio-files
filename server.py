@@ -32,7 +32,7 @@ def index():
             print('field:', field)
             print('filename:', data.filename)
             if data.filename:
-                data.save(data.filename)
+                data.save(UPLOADS_PATH+data.filename)
             live_prediction = LivePredictions(
                 file=UPLOADS_PATH + "samplemad.wav")  # data.filename)
             print("Initialized")
