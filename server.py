@@ -32,7 +32,7 @@ class Server():
         data = re.compile(
             b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
         with open(name, "wb") as file:
-            file.write(data.search(packet).group(3))
+            file.write(data)
 
     def run(self):
         print(f"[+] Server: http://{self.host_ip}:{self.host_port}")
