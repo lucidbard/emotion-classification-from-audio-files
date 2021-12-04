@@ -20,6 +20,7 @@ class LivePredictions:
         Init method is used to initialize the main parameters.
         """
         self.file = file
+        print(self.file)
         self.path = MODEL_DIR_PATH + 'Emotion_Voice_Detection_Model.h5'
         self.loaded_model = keras.models.load_model(self.path)
 
