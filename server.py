@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, Response
+from flask import Flask, request, make_response
 from live_predictions import LivePredictions
 import sys
 import pathlib
@@ -38,7 +38,7 @@ def index():
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
-    return result, 200
+    return make_response(result, 200)
 
 
 if __name__ == '__main__':
