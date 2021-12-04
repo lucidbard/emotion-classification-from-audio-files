@@ -25,7 +25,7 @@ def index():
             if data.filename:
                 data.save(data.filename)
             live_prediction = LivePredictions(
-                file="uploaded/samplemad.wav")  # data.filename)
+                file="samplemad.wav")  # data.filename)
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
