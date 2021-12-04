@@ -15,8 +15,6 @@ def index():
         return '''<form enctype="multipart/form-data" action="" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
     <input name="uploadedfile1" type="file" /><br />
-    <input name="uploadedfile2" type="file" /><br />
-    <input name="uploadedfile3" type="file" /><br />
     <input type="submit" value="Upload File" />
 </form>'''
 
@@ -26,7 +24,10 @@ def index():
             print('filename:', data.filename)
             if data.filename:
                 data.save(os.path.join(FOLDER, data.filename))
-        return "OK"
+            live_prediction = LivePredictions(
+                file=data.filename)
+            result = live_prediction.make_predictions()
+        return result
 
 
 if __name__ == '__main__':
