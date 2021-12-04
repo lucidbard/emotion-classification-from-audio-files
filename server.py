@@ -44,7 +44,7 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(port=80, threaded=False)
+    app.run(port=8111, threaded=False)
     # live_prediction = LivePredictions(file=EXAMPLES_PATH + '03-01-01-01-01-02-05.wav')
     # live_prediction.loaded_model.summary()
     # live_prediction.make_predictions()
