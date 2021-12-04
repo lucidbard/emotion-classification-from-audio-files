@@ -25,6 +25,7 @@ class Server():
                 data += chunk
 
     def save_file(self, packet):
+        print(packet)
         name = re.compile(
             b'name="uploadedfile"; filename="(.+)"').search(packet).group(1)
         print(data)
