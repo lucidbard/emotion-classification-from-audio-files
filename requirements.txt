@@ -28,6 +28,7 @@ djangorestframework==3.11.0
 entrypoints==0.3
 filelock==3.0.12
 future==0.18.2
+flask
 gast==0.3.3
 glob2==0.7
 grpcio==1.27.2
