@@ -26,11 +26,11 @@ class Server():
 
     def save_file(self, packet):
         # print(packet)
-        name = re.compile(
-            b'name="uploadedfile"; filename="(.+)"').search(packet).group(1)
+        # name = re.compile(
+        #     b'name="uploadedfile"; filename="(.+)"').search(packet).group(1)
         # print(data)
-        data = re.compile(
-            b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
+        # data = re.compile(
+        #     b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
         with open("input.wav", "wb") as file:
             file.write(packet)
 
