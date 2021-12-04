@@ -34,7 +34,7 @@ def index():
             if data.filename:
                 data.save(UPLOADS_PATH+data.filename)
             live_prediction = LivePredictions(
-                file=UPLOADS_PATH + "samplemad.wav")  # data.filename)
+                file=UPLOADS_PATH + data.filename)  # data.filename)
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
