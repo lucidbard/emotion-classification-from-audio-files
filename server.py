@@ -2,8 +2,6 @@ import socket
 import re
 import live_predictions
 
-lp = LivePredictions()
-
 
 class Server():
     def __init__(self):
