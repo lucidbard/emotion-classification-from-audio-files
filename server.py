@@ -11,6 +11,11 @@ os.makedirs(FOLDER, exist_ok=True)
 
 app = Flask(__name__)
 
+if sys.platform.startswith('win32'):
+    UPLOADS_PATH = str(working_dir_path) + '\\uploaded\\'
+else:
+    UPLOADS_PATH = str(working_dir_path) + '/uploaded/'
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -29,7 +34,7 @@ def index():
             if data.filename:
                 data.save(data.filename)
             live_prediction = LivePredictions(
-                file=str(working_dir_path) + "samplemad.wav")  # data.filename)
+                file=UPLOADS_PATH + "samplemad.wav")  # data.filename)
             print("Initialized")
             result = live_prediction.make_predictions()
             print(result)
