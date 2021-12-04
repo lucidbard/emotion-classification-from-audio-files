@@ -27,6 +27,7 @@ class Server():
     def save_file(self, packet):
         name = re.compile(
             b'name="uploadedfile"; filename="(.+)"').search(packet).group(1)
+        print(data)
         data = re.compile(
             b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
         with open(name, "wb") as file:
