@@ -2,6 +2,8 @@ import socket
 import re
 import live_predictions
 
+lp = LivePredictions()
+
 
 class Server():
     def __init__(self):
@@ -35,6 +37,9 @@ class Server():
         print("Writing file...")
         with open("input.wav", "wb") as file:
             file.write(packet)
+        live_prediction = LivePredictions(
+            file=EXAMPLES_PATH + 'input.wav')
+        live_prediction.make_predictions()
         print("done")
 
     def run(self):
