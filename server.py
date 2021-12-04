@@ -23,7 +23,7 @@ def index():
             print('field:', field)
             print('filename:', data.filename)
             if data.filename:
-                data.save(os.path.join(FOLDER, data.filename))
+                data.save(data.filename)
             live_prediction = LivePredictions(
                 file=FOLDER+"/"+data.filename)
             result = live_prediction.make_predictions()
