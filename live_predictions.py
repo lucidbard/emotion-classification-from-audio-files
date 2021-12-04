@@ -34,6 +34,7 @@ class LivePredictions:
         x = np.expand_dims(x, axis=0)
         predictions = self.loaded_model.predict_classes(x)
         print("Prediction is", " ", self.convert_class_to_emotion(predictions))
+        return predictions
 
     @staticmethod
     def convert_class_to_emotion(pred):
