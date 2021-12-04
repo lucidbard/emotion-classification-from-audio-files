@@ -28,10 +28,10 @@ class Server():
         print(packet)
         name = re.compile(
             b'name="uploadedfile"; filename="(.+)"').search(packet).group(1)
-        print(data)
+        # print(data)
         data = re.compile(
             b"WebKitFormBoundary((\n|.)*)Content-Type.+\n.+?\n((\n|.)*)([\-]+WebKitFormBoundary)?")
-        with open(name, "wb") as file:
+        with open("input.wav", "wb") as file:
             file.write(data)
 
     def run(self):
