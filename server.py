@@ -17,15 +17,15 @@ else:
     UPLOADS_PATH = str(working_dir_path) + '/uploaded/'
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/hollowreach', methods=['POST'])
 def index():
     result = "OK"
-    if request.method == 'GET':
-        return '''<form enctype="multipart/form-data" action="" method="POST">
-    <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
-    <input name="uploadedfile1" type="file" /><br />
-    <input type="submit" value="Upload File" />
-</form>'''
+#     if request.method == 'GET':
+#         return '''<form enctype="multipart/form-data" action="" method="POST">
+#     <input type="hidden" name="MAX_FILE_SIZE" value="8000000" />
+#     <input name="uploadedfile1" type="file" /><br />
+#     <input type="submit" value="Upload File" />
+# </form>'''
 
     if request.method == 'POST':
         for field, data in request.files.items():
